@@ -1,0 +1,24 @@
+---
+import type { GetStaticPaths } from "astro";
+import { getCollection } from "astro:content";
+
+import VideoCard from "../../components/VideoCard.astro";
+import MainLayout from "../../layouts/MainLayout.astro";
+import Pagination from "../../components/Pagination.astro";
+
+export const getStaticPaths = (async ({ paginate }) => {
+  const videos = await getCollection("videos");
+
+  return paginate(videos, { pageSize: 6 });
+}) satisfies GetStaticPaths;
+
+const { page } = Astro.props;
+---
+
+<MainLayout title="José Martí | Videos">
+  <h1 class="text-3xl font-black mb-5">Videos</h1>
+  <section class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5 max-w-[1730px] mx-auto">
+    { page.data.map((video) => <VideoCard name={video.data.name} video={video} />) }
+  </section>
+  <Pagination page={page} />
+</MainLayout>

@@ -27,7 +27,20 @@ const booksCollection = defineCollection({
     }),
 });
 
+const videosCollection = defineCollection({
+  type: "data",
+  schema: z.object({
+    name: z.string(),
+    poster: z.string(),
+    video: z.string(),
+    description: z.object({
+      name: z.string(),
+    }),
+  }),
+});
+
 export const collections = {
   images: imagesCollection,
   books: booksCollection,
+  videos: videosCollection,
 };

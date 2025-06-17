@@ -1,0 +1,41 @@
+---
+import type { GetStaticPaths } from "astro";
+import { getCollection } from "astro:content";
+import { Icon } from "astro-icon/components";
+
+import MainLayout from "../../layouts/MainLayout.astro";
+
+export const getStaticPaths = (async () => {
+  const videos = await getCollection('videos');
+
+  return videos.map((video) => ({
+    params: { name: video.data.name },
+    props: { video: video },
+  }));
+}) satisfies GetStaticPaths;
+
+const { name } = Astro.params;
+const { video } = Astro.props;
+
+---
+
+<MainLayout title="José Martí | Videos">
+  <h1 class="text-3xl font-black mb-5">Videos</h1>
+  <section>
+    <div class="flex justify-center items-center">
+      <div>
+        <button class="mb-5 cursor-pointer" onclick="history.back()">
+          <Icon name="back" size={30} class="inline-block" /> <span>Regresar</span>
+        </button>
+        <video
+          transition:name={`video-${name}`}
+          class="max-w-[1140px] w-full"
+          src={video.data.video}
+          poster={video.data.poster}
+          controls>
+        </video>
+        <h2 class="mt-2">{video.data.description.name}</h2>
+      </div>
+    </div>
+  </section>
+</MainLayout>

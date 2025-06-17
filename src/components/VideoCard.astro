@@ -1,0 +1,36 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  name: string;
+  video: CollectionEntry<'videos'>;
+}
+
+const { name, video } = Astro.props;
+---
+
+<div class="flex justify-center items-center">
+  <a href={`/videos/${name}`}>
+    <video
+      transition:name=`video-${name}`
+      class="max-w-[1140px] w-full"
+      src={video.data.video}
+      poster={video.data.poster}>
+    </video>
+    <h2 class="mt-2 my-media-query">{video.data.description.name}</h2>
+  </a>
+</div>
+
+<style>
+  @media screen and (max-width: 805px) {
+    .my-media-query {
+      font-size: small;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .my-media-query {
+      font-size: medium;
+    }
+  }
+</style>
