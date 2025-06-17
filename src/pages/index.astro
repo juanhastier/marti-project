@@ -1,16 +1,74 @@
 ---
+import MainLayout from "../layouts/MainLayout.astro";
 
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<MainLayout title="José Martí | Inicio">
+  <section class="flex flex-col justify-center items-center h-screen text-center">
+    <h1
+      class="mb-15 text-5xl font-semibold lg:text-7xl sm:text-6xl sm:font-black">
+      Obra de José Martí en el IPU Calixto García
+    </h1>
+    <button
+      id="explore"
+      class="px-15 py-5 text-2xl font-black border-4 rounded-md hover:text-slate-100 hover:border-blue-500 hover:bg-blue-500 transition cursor-pointer">
+      Explorar
+    </button>
+  </section>
+  <article id="content" class="px-0 text-justify text-xl hyphens-auto interlineado sm:px-10 sm:text-2xl">
+    <p class="mb-5">
+      El Trabajo Político Ideológico (TPI) adquiere en todo momento, una
+      importancia capital y, de esta manera debemos actuar en cada momento
+      de la vida. A partir de asumir la Didáctica del TPI como herramienta
+      teórico-práctica imprescindible, para enrumbar el accionar de
+      estudiantes, profesores, cuadros y directivos como gestores de TPI.
+      En el devenir histórico, socio económico y cultural, las escuelas
+      han jugado un papel estratégico en el desarrollo de la sociedad en
+      cuba.
+    </p>
+    <p class="mb-5">
+      En el contexto actual, donde el alto desarrollo tecnológico y las
+      condiciones de un mundo globalizado, han llevado a caracterizar la
+      sociedad contemporánea como sociedad del conocimiento se acrecienta
+      su papel de modo que, como nunca antes, los centros están llamados a
+      convertirse en verdaderas potencias de la ciencia y la técnica.
+    </p>
+    <p>
+      Actualmente existe una necesidad de la búsqueda de las vías para
+      garantizar la formación ideo-política de los docentes y cuadros y
+      por cuanto son ellos los que tienen el encargo social de lograr la
+      formación de individuos como personalidades íntegramente
+      desarrollados con formas de pensar, sentir y actuar acorde con
+      nuestro proyecto social cubano, que eleven constantemente su nivel
+      político y están cada vez mejor preparados para enfrentar al enemigo
+      en el campo de la lucha ideológica, manteniendo como principio que
+      la educación es el arma fundamental para desarrollar la conciencia
+      por lo que su preparación debe ser la más adecuada para poder
+      convivir en el mundo de hoy.
+    </p>
+  </article>
+
+  <script>
+    function pageLoad() {
+      const button = document.querySelector('#explore') as HTMLButtonElement;
+
+      if (!button) {
+        return;
+      }
+  
+      button.addEventListener('click', () => {
+        button.scrollIntoView({ behavior: 'smooth' });
+      });
+    }
+    
+    document.addEventListener('astro:page-load', pageLoad);
+
+  </script>
+
+</MainLayout>
+
+<style>
+  .interlineado {
+    line-height: 2;
+  }
+</style>

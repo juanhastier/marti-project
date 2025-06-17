@@ -1,0 +1,12 @@
+{
+  "name": "versos-sencillos",
+  "portada": "/src/assets/books/versos-sencillos.jpg",
+  "book": "/books/versos-sencillos.pdf",
+  "description": {
+    "name": "Versos sencillos",
+    "tematic": "Literatura",
+    "editorial": "Pueblo y Educación",
+    "author": "José Martí",
+    "info": "He aquí otra lectura grata y enriquecedora. Nos encontramos ante una obra cuya belleza es extraordinaria; con ella Martí le entrega al lector un sentir sin recato, de la limpieza de su palabra surgen estos versos sencillos que jamás han dejado de florecer. Se trata de una poesía pensada, emotiva, reposada; de un lirismo que refleja, abiertamente, la plenitud autoral del Apóstol."
+  }
+}

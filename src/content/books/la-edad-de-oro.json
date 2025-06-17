@@ -1,0 +1,12 @@
+{
+  "name": "la-edad-de-oro",
+  "portada": "/src/assets/books/la-edad-de-oro.jpg",
+  "book": "/books/la-edad-de-oro.pdf",
+  "description": {
+    "name": "La edad de oro",
+    "tematic": "Literatura",
+    "editorial": "Ediciones Cubanas Artex S. A.",
+    "author": "José Martí",
+    "info": "El primer número de la revista vio la luz en julio de 1889, durante la estancia de Martí en Nueva York para preparar la Guerra que le daría la independencia a Cuba del colonialismo español y en la que Martí perdería la vida. Realizando un esfuerzo sobrenatural entre tantas responsabilidades, Martí logró publicar 4 números de la revista La Edad de Oro. Los textos de la revista son cuentos, ensayos y poesías que muestran ejemplarmente el humanismo e idealismo martianos. La universalidad de los valores humanos nos llega a través de un amplio espectro de temas y épocas tratadas. La Edad de Oro se propone incitar en el pequeño lector la búsqueda del conocimiento, del amor y la justicia."
+  }
+}

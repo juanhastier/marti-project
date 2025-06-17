@@ -1,0 +1,12 @@
+{
+  "name": "flores-del-destierror",
+  "portada": "/src/assets/books/flores-del-destierro.jpg",
+  "book": "/books/flores-del-destierro.pdf",
+  "description": {
+    "name": "Flores del destierro",
+    "tematic": "Literatura",
+    "editorial": "Ediciones Cubanas Artex S. A.",
+    "author": "José Martí",
+    "info": "Bajo el título \"Flores del destierro\" José Martí reconoció un total de 48 poemas, de composición y estilo muy diferentes a sus otros poemarios. Algunos de los poemas de esta obra son \"Contra el verso retórico\", \"Vino de chianti\", \"Árabe\", \"La noche es la propicia\", \"Cual de incensario roto\" o \"Antes de trabajar\"."
+  }
+}

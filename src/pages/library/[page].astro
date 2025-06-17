@@ -1,0 +1,25 @@
+---
+import type { GetStaticPaths } from "astro";
+import { getCollection } from "astro:content";
+
+import MainLayout from "../../layouts/MainLayout.astro";
+import BookCard from "../../components/BookCard.astro";
+import Pagination from "../../components/Pagination.astro";
+
+export const getStaticPaths = (async ({ paginate }) => {
+  const books = await getCollection("books");
+  
+  return paginate(books, { pageSize: 8 });
+}) satisfies GetStaticPaths;
+
+const { page } = Astro.props;
+
+---
+
+<MainLayout title="José Martí | Librería">
+  <h1 class="text-3xl font-black mb-5">Libros</h1>
+  <section class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-5 max-w-[1730px] mx-auto">
+    { page.data.map((book) => <BookCard name={book.data.name} book={book} />) }
+  </section>
+  <Pagination page={page} />
+</MainLayout>

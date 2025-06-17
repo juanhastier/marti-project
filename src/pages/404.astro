@@ -1,0 +1,24 @@
+---
+import { Icon } from "astro-icon/components";
+import MainLayout from "../layouts/MainLayout.astro";
+
+---
+
+<MainLayout title="José Martí | No encontrado">
+  <h1 class="mb-10 text-3xl sm:text-3xl font-black">No encontrado</h1>
+  <section class="flex justify-center items-center screen-height">
+    <div class="text-center">
+      <h2 class="text-8xl sm:text-9xl font-black">404</h2>
+      <h2 class="text-2xl sm:text-5xl font-bold">Estás perdido?</h2>
+      <a class="mt-5 block cursor-pointer" href="/">
+        <Icon name="back" size={30} class="inline-block" /> <span>Ir al Inicio</span>
+      </a>
+    </div>
+  </section>
+</MainLayout>
+
+<style>
+.screen-height {
+  min-height: calc(100vh - 292px);
+}
+</style>

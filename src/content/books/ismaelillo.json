@@ -1,0 +1,12 @@
+{
+  "name": "ismaelillo",
+  "portada": "/src/assets/books/ismaelillo.jpg",
+  "book": "/books/ismaelillo.pdf",
+  "description": {
+    "name": "Ismaelillo",
+    "tematic": "Literatura",
+    "editorial": "Cubaliteraria",
+    "author": "José Martí",
+    "info": "El Ismaelillo (1882) se considera la primera obra publicada de toda la producción poética de José Martí. Es una de las obras de poesía más emblemáticas e influyentes del modernismo. Está compuesto por 15 poemas: Príncipe enano, Sueño despierto, Brazos fragantes, Mi caballero, Musa traviesa, Mi reyecillo, Penachos vívidos, Hijo del alma, Amor errante, Sobre mi hombro, Tábanos fieros, Tórtola blanca, Valle lozano, Mi despensero, Rosilla nueva."
+  }
+}

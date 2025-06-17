@@ -1,0 +1,13 @@
+{
+  "id": "09",
+  "name": "la-republica-espaniola-ante-la-revolucion-cubana",
+  "portada": "/src/assets/books/la-republica-espaniola-ante-la-revolucion-cubana.jpg",
+  "book": "/books/la-republica-espaniola-ante-la-revolucion-cubana.pdf",
+  "description": {
+    "name": "La república española ante la revolución cubana",
+    "tematic": "Literatura",
+    "editorial": "José Martí",
+    "author": "José Martí",
+    "info": "“El Presidio Político en Cuba” es una pieza única en la obra de José Martí, prosa desollada y obsesiva como el ciclo diario de las canteras, sin más color que el blanco que la cal reverberando y el negro del sombrero, con el ritmo silecioso de los palos y cadenas del presidio, con expresiones de evidente raiz bíblica, párrafos cortos al estilo hebraico; constituyendo un inmenso poema de la desolación y la piedad."
+  }
+}

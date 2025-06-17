@@ -1,0 +1,37 @@
+---
+import { ViewTransitions } from 'astro:transitions';
+
+import Footer from '../components/Footer.astro';
+import Navbar from '../components/Navbar.astro';
+
+import '../styles/global.css'
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html class="" lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content={Astro.generator}>
+  
+  <title>{ title }</title>
+
+  <ViewTransitions />
+</head>
+<body class="dark:bg-slate-900 dark:text-slate-100 bg-slate-100 text-slate-600">
+  <div class="min-h-screen p-5 pl-[102px]">
+    <Navbar />
+    <main class="mb-14">
+      <slot />
+    </main>
+    <Footer />
+  </div>
+</body>
+</html>

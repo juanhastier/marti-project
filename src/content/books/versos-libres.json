@@ -1,0 +1,12 @@
+{
+  "name": "versos-libres",
+  "portada": "/src/assets/books/versos-libres.jpg",
+  "book": "/books/versos-libres.pdf",
+  "description": {
+    "name": "Versos libres",
+    "tematic": "Arte y cultura",
+    "editorial": "José Martí",
+    "author": "José Martí",
+    "info": "Versos libres es un cuaderno de poemas gruesos y densamente poblados de filosofía y amor a la libertad y la belleza. Se caracterizan por su hondo sentido de la vida y la poesía, un estilo arcaizante, de un ritmo y una verbosidad áspera y rebelde, en un tono más experimental que no se le conocía a Martí hasta su publicación de manera póstuma, allá por la primera mitad del siglo XX. Entre los poemas más citados por la crítica se encuentran «Hierro» y «Yugo y estrella»."
+  }
+}

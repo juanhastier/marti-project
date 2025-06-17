@@ -1,0 +1,47 @@
+---
+import type { GetStaticPaths } from "astro";
+import { getCollection } from "astro:content";
+import { Picture } from "astro:assets";
+import { Icon } from "astro-icon/components";
+
+import MainLayout from "../../layouts/MainLayout.astro";
+
+export const getStaticPaths = (async () => {
+  const images = await getCollection("images");
+
+  return images.map((image) => ({
+    params: { name: `image-${image.data.name}` },
+    props: { image: image },
+  }));
+}) satisfies GetStaticPaths;
+
+const { name } = Astro.params;
+const { image } = Astro.props;
+
+---
+
+<MainLayout title="José Martí | Galería">
+    <h1 class="text-3xl font-black mb-5">Galería</h1>
+    <section class="flex flex-col justify-center items-center">
+      <div class="max-w-[1140px] w-full">
+        <button class="mb-5 cursor-pointer" onclick="history.back()">
+          <Icon name="back" size={30} class="inline-block" /> <span>Regresar</span>
+        </button>
+        <Picture
+          class="w-full"
+          src={image.data.image}
+          alt={image.data.description}
+          formats={["webp", "avif", "jpg"]}
+          transition:name={name}
+          widths={[240, 600, 800, image.data.image.width]}
+          sizes={`
+            (max-width: 360px) 240px,
+            (max-width: 720px) 600px,
+            (max-width: 900px) 800px,
+            ${image.data.image.width}
+          `}
+        />
+        <p class="mt-5">{image.data.description}</p>
+      </div>
+    </section>
+  </MainLayout>

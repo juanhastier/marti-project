@@ -1,0 +1,27 @@
+---
+import { Icon } from "astro-icon/components";
+
+const { page } = Astro.props;
+---
+
+<section class="flex justify-between items-center mt-10">
+  <div>
+    <a
+      class:list={[
+        "inline-block",
+        { 'text-slate-400 cursor-not-allowed': !page.url.prev }
+      ]}
+      href={page.url.prev}>
+      <Icon name="backward" size={25} />
+    </a>
+    <a
+      class:list={[
+        "inline-block",
+        { 'text-slate-400 cursor-not-allowed': !page.url.next }
+      ]}
+      href={page.url.next}>
+      <Icon name="forward" size={25} />
+    </a>
+  </div>
+  <span>Páguina {page.currentPage}/{page.lastPage}</span>
+  </section>

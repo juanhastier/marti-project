@@ -1,0 +1,12 @@
+{
+  "name": "abdala",
+  "portada": "/src/assets/books/abdala.jpg",
+  "book": "/books/abdala.pdf",
+  "description": {
+    "name": "Abdala",
+    "tematic": "Literatura",
+    "editorial": "José Martí",
+    "author": "José Martí",
+    "info": "Poema dramático escrito expresamente para «la patria», ve la luz en 1869, con la primera guerra cubana contra España como escenario político. En sus ocho escenas, el joven Martí esboza sus ideales patrios y ofrece una visión anticipada de su propia vida. La Asociación de Cubanos e Intérpretes, heredera de sus enseñanzas, ha querido homenajearlo con esta publicación multilingüe."
+  }
+}

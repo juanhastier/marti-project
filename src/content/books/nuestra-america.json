@@ -1,0 +1,12 @@
+{
+  "name": "nuestra-america",
+  "portada": "/src/assets/books/nuestra-america.jpg",
+  "book": "/books/nuestra-america.pdf",
+  "description": {
+    "name": "Nuestra américa",
+    "tematic": "Literatura",
+    "editorial": "Nuevo milenio",
+    "author": "José Martí",
+    "info": "Texto cenital de José Martí, aparecido por primera vez en La Revista Ilustrada de Nueva York el 1. de enero de 1891 y el 30 de enero del mismo año en El Partido Liberal, de México. Resume, en un deslumbrante estilo metafórico, acuciantes problemáticas de la América Latina de entonces, y aún de hoy, que limitaban y limitan todavía el pleno desarrollo de sus potencialidades como región con características específicas de las otras zonas del orbe."
+  }
+}

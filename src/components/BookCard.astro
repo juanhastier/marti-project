@@ -1,0 +1,28 @@
+---
+import { Picture } from 'astro:assets';
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  name?: string;
+  book: CollectionEntry<'books'>;
+}
+
+const { name, book } = Astro.props;
+---
+
+<div class="flex justify-center items-center">
+  <a href={`/library/${name}`} class="flex flex-col items-center lg:flex-row">
+    <Picture
+      transition:name={`image-${name}`}
+      formats={['webp', 'avif', 'jpg']}
+      class="max-w-[417px] w-full"
+      src={book.data.portada}
+      widths={[240, 417]}
+      sizes={
+        `(max-width: 360px) 240px,
+         417px`
+      }
+      alt={`Portada del libro "${book.data.description.name}"`}
+    />
+  </a>   
+</div>

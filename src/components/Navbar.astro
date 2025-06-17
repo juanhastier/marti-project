@@ -1,0 +1,78 @@
+---
+import { Icon } from "astro-icon/components";
+
+const links = [
+  { href: '/', name: 'home' },
+  { href: '/gallery/1', name: 'gallery' },
+  { href: '/videos/1', name: 'videos' },
+  { href: '/library/1', name: 'library' },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<header class="fixed top-0 left-0 h-full py-5 flex flex-col justify-center z-10">
+  <button class="absolute top-6 left-5 cursor-pointer">
+    <Icon data-light class="hidden" name='light' width='2em' height='2em' />
+    <Icon data-dark name='dark' width='2em' height='2em' />
+  </button>
+  <nav class="p-5 py-10 border-r-2">
+    <ul>
+      {
+        links.map(({href, name}) => (
+          <li class:list={["flex justify-center items-center", name === 'library' ? 'mb-0' : 'mb-10']}>
+            <a href={href}>
+              <Icon name={name} width='2em' height='2em' />
+            </a>
+            {
+              currentPath.split('/')[1] === href.split('/')[1]
+                ? <div transition:name="anime-line" class="w-0.5 h-0.5 ml-2 rounded bg-blue-400 box-shadow"></div>
+                : <div class="w-0.5 h-0.5 ml-2 rounded bg-transparent"></div>
+            }
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+</header>
+
+<script>
+  function pageLoad() {
+    const modes = document.querySelector('button') as HTMLButtonElement;
+    const html = document.documentElement;
+
+    const light = document.querySelector('[data-light]') as HTMLElement;
+    const dark = document.querySelector('[data-dark]') as HTMLElement;
+
+    if (localStorage.getItem('dark')) {
+      document.documentElement.classList.add('dark');
+      dark.classList.add('hidden');
+      light.classList.remove('hidden');
+    }
+
+    function toggleMode() {
+      html.classList.toggle('dark');
+      
+      if (html.classList.contains('dark')) {
+        localStorage.setItem('dark', 'dark');
+        dark.classList.add('hidden');
+        light.classList.remove('hidden');
+      }
+      else {
+        localStorage.removeItem('dark');
+        light.classList.add('hidden');
+        dark.classList.remove('hidden');
+      }
+    }
+
+    modes.addEventListener('click', toggleMode);
+  }
+  
+  document.addEventListener('astro:page-load', pageLoad);
+</script>
+
+<style>
+  .box-shadow {
+    box-shadow: var(--color-blue-500) 1px 1px 3px 3px;
+  }
+</style>

@@ -1,0 +1,25 @@
+---
+import type { GetStaticPaths } from "astro";
+import { getCollection } from "astro:content";
+
+import ImageCard from "../../components/ImageCard.astro";
+import MainLayout from "../../layouts/MainLayout.astro";
+import Pagination from "../../components/Pagination.astro";
+
+export const getStaticPaths = (async ({ paginate }) => {
+  const images = await getCollection("images");
+  
+  return paginate(images, { pageSize: 9 });
+}) satisfies GetStaticPaths;
+
+const { page } = Astro.props;
+
+---
+
+<MainLayout title="José Martí | Galería">
+  <h1 class="text-3xl font-black mb-5">Galería</h1>
+  <section class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5 max-w-[1730px] mx-auto">
+    { page.data.map((image) => <ImageCard name={image.data.name} image={image} />) }
+  </section>
+  <Pagination page={page} />
+</MainLayout>

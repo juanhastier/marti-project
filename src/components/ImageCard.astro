@@ -1,0 +1,30 @@
+---
+import { Picture } from 'astro:assets';
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  name?: string;
+  image: CollectionEntry<'images'>;
+};
+
+const { name, image } = Astro.props;
+---
+
+<div class="flex justify-center items-center">
+  <a href={`/gallery/image-${name}`}>
+    <Picture
+      class="w-full"
+      src={image.data.image}
+      alt={image.data.description}
+      formats={["webp", "avif", "jpg"]}
+      transition:name={`image-${name}`}
+      widths={[240, 540, 720]}
+      sizes={
+        `(max-width: 360px) 240px,
+         (max-width: 720px) 540px,
+         720px`
+      }
+    />
+  </a>
+</div>
+<!-- (max-width: 1600px) 720px, -->

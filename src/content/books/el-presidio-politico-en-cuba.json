@@ -1,0 +1,12 @@
+{
+  "name": "el-presidio-politico-en-cuba",
+  "portada": "/src/assets/books/el-presidio-politico-en-cuba.jpg",
+  "book": "/books/el-presidio-politico-en-cuba.pdf",
+  "description": {
+    "name": "El presidio político en Cuba",
+    "tematic": "Literatura",
+    "editorial": "José Martí",
+    "author": "José Martí",
+    "info": "“El Presidio Político en Cuba” es una pieza única en la obra de José Martí, prosa desollada y obsesiva como el ciclo diario de las canteras, sin más color que el blanco que la cal reverberando y el negro del sombrero, con el ritmo silecioso de los palos y cadenas del presidio, con expresiones de evidente raiz bíblica, párrafos cortos al estilo hebraico; constituyendo un inmenso poema de la desolación y la piedad."
+  }
+}
