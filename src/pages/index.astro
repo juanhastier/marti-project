@@ -47,25 +47,23 @@ import MainLayout from "../layouts/MainLayout.astro";
       convivir en el mundo de hoy.
     </p>
   </article>
-
-  <script>
-    function pageLoad() {
-      const button = document.querySelector('#explore') as HTMLButtonElement;
-
-      if (!button) {
-        return;
-      }
-  
-      button.addEventListener('click', () => {
-        button.scrollIntoView({ behavior: 'smooth' });
-      });
-    }
-    
-    document.addEventListener('astro:page-load', pageLoad);
-
-  </script>
-
 </MainLayout>
+
+<script>
+  function pageLoad() {
+    const button = document.querySelector('#explore') as HTMLButtonElement;
+
+    if (!button) {
+      return;
+    }
+
+    button.addEventListener('click', () => {
+      button.scrollIntoView({ behavior: 'smooth' });
+    });
+  }
+  
+  window.addEventListener('DOMContentLoaded', pageLoad);
+</script>
 
 <style>
   .interlineado {
